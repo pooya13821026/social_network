@@ -4,10 +4,10 @@ from myproject.common.types import DjangoModelType
 
 
 def model_update(
-    *,
-    instance: DjangoModelType,
-    fields: List[str],
-    data: Dict[str, Any]
+        *,
+        instance: DjangoModelType,
+        fields: List[str],
+        data: Dict[str, Any]
 ) -> Tuple[DjangoModelType, bool]:
     """
     Generic update service meant to be reused in local update services

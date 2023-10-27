@@ -11,7 +11,6 @@ JWT_AUTH_COOKIE = env("JWT_AUTH_COOKIE", default="jwt")
 JWT_AUTH_COOKIE_SAMESITE = env("JWT_AUTH_COOKIE_SAMESITE", default="Lax")
 JWT_AUTH_HEADER_PREFIX = env("JWT_AUTH_HEADER_PREFIX", default="Bearer")
 
-
 JWT_AUTH = {
     "JWT_GET_USER_SECRET_KEY": "myproject.authentication.services.auth_user_get_jwt_secret_key",
     "JWT_RESPONSE_PAYLOAD_HANDLER": "myproject.authentication.services.auth_jwt_response_payload_handler",

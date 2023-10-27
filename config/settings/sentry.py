@@ -13,6 +13,7 @@ if SENTRY_DSN:
     from sentry_sdk.integrations.django import DjangoIntegration
     from sentry_sdk.integrations.celery import CeleryIntegration
 
+
     # We are implementing this following the official documentation:
     # https://docs.sentry.io/platforms/python/performance/
     # This specific implementation ignores the execute times of all Celery tasks.
@@ -62,6 +63,7 @@ if SENTRY_DSN:
             return 0
 
         return 0.5
+
 
     sentry_sdk.init(
         dsn=SENTRY_DSN,

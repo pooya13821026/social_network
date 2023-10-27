@@ -6,7 +6,6 @@ import django.utils.timezone
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -25,6 +24,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddConstraint(
             model_name='randommodel',
-            constraint=models.CheckConstraint(check=models.Q(start_date__lt=django.db.models.expressions.F('end_date')), name='start_date_before_end_date'),
+            constraint=models.CheckConstraint(check=models.Q(start_date__lt=django.db.models.expressions.F('end_date')),
+                                              name='start_date_before_end_date'),
         ),
     ]

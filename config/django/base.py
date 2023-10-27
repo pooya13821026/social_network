@@ -11,12 +11,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
 
-
 # Application definition
 LOCAL_APPS = [
     'myproject.core.apps.CoreConfig',
     'myproject.common.apps.CommonConfig',
     'myproject.users.apps.UsersConfig',
+    'myproject.blog.apps.BlogConfig',
     'myproject.authentication.apps.AuthenticationConfig',
 ]
 
@@ -75,7 +75,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
@@ -95,7 +94,6 @@ if os.environ.get('GITHUB_WORKFLOW'):
             'PORT': '5432',
         }
     }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -129,7 +127,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
@@ -147,7 +144,6 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': []
 }
 
-
 # Redis
 CACHES = {
     'default': {
@@ -158,7 +154,6 @@ CACHES = {
 # Cache time to live is 15 minutes.
 CACHE_TTL = 60 * 15
 
-
 APP_DOMAIN = env("APP_DOMAIN", default="http://localhost:8000")
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
@@ -168,5 +163,5 @@ from config.settings.jwt import *  # noqa
 from config.settings.sessions import *  # noqa
 from config.settings.celery import *  # noqa
 from config.settings.swagger import *  # noqa
-#from config.settings.sentry import *  # noqa
-#from config.settings.email_sending import *  # noqa
+# from config.settings.sentry import *  # noqa
+# from config.settings.email_sending import *  # noqa

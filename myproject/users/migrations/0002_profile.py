@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ('users', '0001_initial'),
     ]
@@ -20,7 +19,8 @@ class Migration(migrations.Migration):
                 ('subscriber_count', models.PositiveIntegerField(default=0)),
                 ('subscription_count', models.PositiveIntegerField(default=0)),
                 ('bio', models.CharField(blank=True, max_length=1000, null=True)),
-                ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                'user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

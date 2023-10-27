@@ -6,7 +6,6 @@ from django.contrib.auth.models import BaseUserManager as BUM
 from django.contrib.auth.models import PermissionsMixin
 
 
-
 class BaseUserManager(BUM):
     def create_user(self, email, is_active=True, is_admin=False, password=None):
         if not email:
@@ -39,8 +38,7 @@ class BaseUserManager(BUM):
 
 
 class BaseUser(BaseModel, AbstractBaseUser, PermissionsMixin):
-
-    email = models.EmailField(verbose_name = "email address",
+    email = models.EmailField(verbose_name="email address",
                               unique=True)
 
     is_active = models.BooleanField(default=True)
@@ -66,9 +64,3 @@ class Profile(models.Model):
 
     def __str__(self):
         return f"{self.user} >> {self.bio}"
-
-
-
-
-
-

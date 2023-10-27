@@ -7,7 +7,7 @@ from rest_framework import serializers
 
 
 def make_mock_object(**kwargs):
-    return type("", (object, ), kwargs)
+    return type("", (object,), kwargs)
 
 
 def get_object(model_or_queryset, **kwargs):
@@ -22,7 +22,7 @@ def get_object(model_or_queryset, **kwargs):
 
 
 def create_serializer_class(name, fields):
-    return type(name, (serializers.Serializer, ), fields)
+    return type(name, (serializers.Serializer,), fields)
 
 
 def inline_serializer(*, fields, data=None, **kwargs):
