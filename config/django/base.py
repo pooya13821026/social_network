@@ -17,6 +17,7 @@ LOCAL_APPS = [
     'myproject.common.apps.CommonConfig',
     'myproject.users.apps.UsersConfig',
     'myproject.blog.apps.BlogConfig',
+    'myproject.tasks.apps.TasksConfig',
     'myproject.authentication.apps.AuthenticationConfig',
 ]
 
